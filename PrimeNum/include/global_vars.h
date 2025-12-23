@@ -1,10 +1,11 @@
-#ifndef VARS_H
+#pragma once
+
+// Forward declarations
 void PrimeChk(int Num, bool Myverbose);
 void PrimeGen(int Num, bool Myverbose);
 void PrimeFac(int Num, int Origin);
 void PrimeChkIntro();
 void PrimeFacIntro();
 void PrimeGenIntro();
-float Version = (float)1.2;
-int selection;
-#endif // !VARS_H
+
+inline constexpr float Version = 1.2f;

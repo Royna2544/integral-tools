@@ -1,33 +1,43 @@
 #include <iostream>
+#include <limits>
 #include "includes.h"
-using namespace std;
-int main(){
-Inital:
-	cout << "Welcome To Integral Tools. (C)2021 Na Soo-Hwan" << endl;
-	cout << "      1. Prime Number" << endl;
-	cout << "      2. Simple Calculator" << endl;
-	cout << "      3. Combination" << endl;
-	cout << "      0. Exit This Program" << endl;
-	cout << "What Category Would You Like To Use? [0~3] : ";
-	cin >> category;
-	if (cin.fail()) {
-                cout << "Error Parsing. Please Try Another Number";
-                cout << endl << endl;
-                cin.clear();
-                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                goto Inital;
-        }
-	cout << endl;
-	if (category == 1){
-		prime();
-	}else if (category == 2){
-		calc();
-	}else if (category == 3){
-                combination();
-        }else if (category == 0){
-		exit(1);
-	}else{
-		goto Inital;
-	}
 
+int main() {
+    while (true) {
+        std::cout << "Welcome To Integral Tools. (C)2021 Na Soo-Hwan\n";
+        std::cout << "      1. Prime Number\n";
+        std::cout << "      2. Simple Calculator\n";
+        std::cout << "      3. Combination\n";
+        std::cout << "      0. Exit This Program\n";
+        std::cout << "What Category Would You Like To Use? [0~3] : ";
+        
+        int category;
+        std::cin >> category;
+        
+        if (std::cin.fail()) {
+            std::cout << "Error Parsing. Please Try Another Number\n\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
+        }
+        
+        std::cout << '\n';
+        
+        switch (category) {
+            case 1:
+                prime();
+                break;
+            case 2:
+                calc();
+                break;
+            case 3:
+                combination();
+                break;
+            case 0:
+                return 0;
+            default:
+                // Invalid choice, loop will continue
+                break;
+        }
+    }
 }

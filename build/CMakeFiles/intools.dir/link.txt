@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic -Wl,--dependency-file=CMakeFiles/intools.dir/link.d CMakeFiles/intools.dir/core.cpp.o -o intools  PrimeNum/libPrimeNum.a Combination/libCombination.a Calc/libCalc.a

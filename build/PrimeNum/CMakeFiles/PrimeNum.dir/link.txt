@@ -1,2 +1,0 @@
-/usr/bin/ar qc libPrimeNum.a CMakeFiles/PrimeNum.dir/main.cpp.o CMakeFiles/PrimeNum.dir/PrimeNumberChecker.cpp.o CMakeFiles/PrimeNum.dir/PrimeNumberFactorizer.cpp.o CMakeFiles/PrimeNum.dir/PrimeNumberGenerator.cpp.o
-/usr/bin/ranlib libPrimeNum.a

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libCalc.a CMakeFiles/Calc.dir/main.cpp.o CMakeFiles/Calc.dir/print_err.cpp.o
-/usr/bin/ranlib libCalc.a
