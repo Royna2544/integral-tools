@@ -1,6 +1,7 @@
 #include <iostream>
 #include <limits>
 #include <string>
+#include <string_view>
 #include "include/vars.h"
 
 namespace {
@@ -14,24 +15,30 @@ namespace {
         ReturnToMenu = 5
     };
     
-    std::string get_operation_prompt(Operation op, double num1, bool is_first) {
-        std::string op_symbol;
+    constexpr std::string_view get_operation_symbol(Operation op) {
         switch (op) {
-            case Operation::Plus: op_symbol = "+"; break;
-            case Operation::Minus: op_symbol = "-"; break;
-            case Operation::Multiply: op_symbol = "*"; break;
-            case Operation::Divide: op_symbol = "/"; break;
+            case Operation::Plus: return "+";
+            case Operation::Minus: return "-";
+            case Operation::Multiply: return "*";
+            case Operation::Divide: return "/";
             default: return "";
-        }
-        
-        if (is_first) {
-            return "Enter The First Number (Currently ? " + op_symbol + " ?) [Float]: ";
-        } else {
-            return "Enter The Second Number (Currently " + std::to_string(num1) + " " + op_symbol + " ?) [Float]: ";
         }
     }
     
-    double calculate(Operation op, double num1, double num2) {
+    std::string get_operation_prompt(Operation op, double num1, bool is_first) {
+        auto op_symbol = get_operation_symbol(op);
+        
+        if (is_first) {
+            return std::string("Enter The First Number (Currently ? ") + 
+                   std::string(op_symbol) + " ?) [Float]: ";
+        } else {
+            return "Enter The Second Number (Currently " + 
+                   std::to_string(num1) + " " + 
+                   std::string(op_symbol) + " ?) [Float]: ";
+        }
+    }
+    
+    constexpr double calculate(Operation op, double num1, double num2) {
         switch (op) {
             case Operation::Plus: return num1 + num2;
             case Operation::Minus: return num1 - num2;
