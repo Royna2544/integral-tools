@@ -50,7 +50,7 @@ void PrimeFacIntro() {
         std::cout << '\n';
         
         if (std::cin.fail()) {
-            std::cout << input_num << "0 Is Not Allowed Here. Enter Other Number\n";
+            std::cout << "Error in parsing input. Enter Other Number\n";
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             continue;

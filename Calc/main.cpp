@@ -52,7 +52,7 @@ namespace {
 void calc() {
     while (true) {
         std::cout << "=============================================================\n";
-        std::cout << "=========   Welcome To Terminal Caculator Ver " << version << "  ==========\n";
+        std::cout << "=========   Welcome To Terminal Calculator Ver " << version << "  ==========\n";
         std::cout << "=============================================================\n\n";
         std::cout << "      == Please Enter The Operator You Want To Use ==\n";
         std::cout << "             1. Plus (+)\n";
