@@ -40,7 +40,6 @@ void prime() {
                 std::cout << '\n';
                 break;
             case 4:
-                main();
                 return;
             default:
                 // Invalid choice, loop will continue

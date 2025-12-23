@@ -7,3 +7,9 @@
 void prime();
 void calc();
 void combination();
+
+// Menu navigation control
+enum class MenuAction {
+    Continue,
+    ReturnToMain
+};

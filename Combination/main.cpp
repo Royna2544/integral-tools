@@ -33,7 +33,6 @@ void combination() {
                 ComC();
                 return;
             case 0:
-                main();
                 return;
             default:
                 // Invalid choice, loop will continue

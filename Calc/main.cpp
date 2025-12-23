@@ -59,7 +59,6 @@ void calc() {
         std::cin >> operatorNum;
         
         if (operatorNum == static_cast<int>(Operation::ReturnToMenu)) {
-            main();
             return;
         }
         
