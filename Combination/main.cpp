@@ -1,35 +1,42 @@
 #include <iostream>
+#include <limits>
 #include "include/includes.h"
 #include "include/in.h"
-using namespace std;
-void combination()
-{
-Int:
-        cout << "Combination Tools" << endl;
-        cout << "(C)2021 Na Soo-Hwan" << endl;
-        cout << "Select Combination Type" << endl;
-        cout << "1. nPr" << endl;
-        cout << "2. nCr" << endl;
-	cout << "0. Back To Menu" << endl;
-        cout << "What Type You Want To Calculate? [0~2] : ";
-        cin >> mymytype;
-        if (cin.fail()) {
-                cout << "Failed To Parse. Enter Other Number";
-                cout << endl << endl;
-                cin.clear();
-                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                goto Int;
+
+void combination() {
+    while (true) {
+        std::cout << "Combination Tools\n";
+        std::cout << "(C)2021 Na Soo-Hwan\n";
+        std::cout << "Select Combination Type\n";
+        std::cout << "1. nPr\n";
+        std::cout << "2. nCr\n";
+        std::cout << "0. Back To Menu\n";
+        std::cout << "What Type You Want To Calculate? [0~2] : ";
+        
+        int type;
+        std::cin >> type;
+        
+        if (std::cin.fail()) {
+            std::cout << "Failed To Parse. Enter Other Number\n\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
         }
-        cout << endl;
-	if (mymytype == 1){
-		ComP();
-	}else if (mymytype == 2){
-		ComC();
-	}else if (mymytype == 0){
-		main();
-	}else{
-		goto Int;
-	}
-
-
+        
+        std::cout << '\n';
+        
+        switch (type) {
+            case 1:
+                ComP();
+                return;
+            case 2:
+                ComC();
+                return;
+            case 0:
+                return;
+            default:
+                // Invalid choice, loop will continue
+                break;
+        }
+    }
 }

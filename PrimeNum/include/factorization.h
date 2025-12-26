@@ -1,4 +1,5 @@
-#ifndef FAC_H
-int InputNumB;
-int component[20];
-#endif // !FAC_H
+#pragma once
+
+#include <array>
+
+// No global variables - moved to function scope

@@ -1,43 +1,49 @@
 #include <iostream>
+#include <limits>
 #include "include/global_vars.h"
 #include "include/includes.h"
-using namespace std;
-void prime()
-{
-Init:
-	cout << "Prime Number Tools Ver " << Version << endl;
-	cout << "(C)2021 Na Soo-Hwan" << endl;
-	cout << "Tools List" << endl;
-	cout << "1. PrimeNumberChecker" << endl;
-	cout << "2. PrimeNumberGenerator" << endl;
-	cout << "3. PrimeNumberFactorizer" << endl;
-	cout << "4. Return To Main Menu" << endl;
-	cout << "What Tool You Want To Use? [1~4] : ";
-	cin >> selection;
-	if (cin.fail()) {
-		cout << "0 Is Not Allowed Here. Enter Other Number";
-		cout << endl << endl;
-		cin.clear();
-		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		goto Init;
-	}
-	cout << endl;
-	if (selection == 1) {
-		PrimeChkIntro();
-		cout << endl;
-		goto Init;
-	}else if (selection == 2){
-		PrimeGenIntro();
-		cout << endl;
-		goto Init;
-	}
-	else if (selection == 3) {
-		PrimeFacIntro();
-		cout << endl;
-		goto Init;
-	}else if (selection == 4){
-		main();
-	}else {
-		goto Init;
-	}
+
+void prime() {
+    while (true) {
+        std::cout << "Prime Number Tools Ver " << Version << '\n';
+        std::cout << "(C)2021 Na Soo-Hwan\n";
+        std::cout << "Tools List\n";
+        std::cout << "1. PrimeNumberChecker\n";
+        std::cout << "2. PrimeNumberGenerator\n";
+        std::cout << "3. PrimeNumberFactorizer\n";
+        std::cout << "4. Return To Main Menu\n";
+        std::cout << "What Tool You Want To Use? [1~4] : ";
+        
+        int selection;
+        std::cin >> selection;
+        
+        if (std::cin.fail()) {
+            std::cout << "0 Is Not Allowed Here. Enter Other Number\n\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
+        }
+        
+        std::cout << '\n';
+        
+        switch (selection) {
+            case 1:
+                PrimeChkIntro();
+                std::cout << '\n';
+                break;
+            case 2:
+                PrimeGenIntro();
+                std::cout << '\n';
+                break;
+            case 3:
+                PrimeFacIntro();
+                std::cout << '\n';
+                break;
+            case 4:
+                return;
+            default:
+                // Invalid choice, loop will continue
+                break;
+        }
+    }
 }

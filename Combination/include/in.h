@@ -1,4 +1,5 @@
-int main();
-int mymytype;
+#pragma once
+
+// Forward declarations
 void ComP();
 void ComC();

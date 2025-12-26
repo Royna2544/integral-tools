@@ -1,3 +1,3 @@
-#ifndef GEN_H
-int InputNumA;
-#endif // !GEN_H
+#pragma once
+
+// No global variables - moved to function scope

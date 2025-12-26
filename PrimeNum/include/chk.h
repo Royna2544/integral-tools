@@ -1,3 +1,3 @@
-#ifndef CHK_H
-int InputNum;
-#endif // !CHK_H
+#pragma once
+
+// No global variables - moved to function scope

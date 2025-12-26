@@ -1,6 +1,15 @@
+#pragma once
+
 #include <stdexcept>
 #include <limits>
-int category;
+
+// Forward declarations
 void prime();
 void calc();
 void combination();
+
+// Menu navigation control
+enum class MenuAction {
+    Continue,
+    ReturnToMain
+};

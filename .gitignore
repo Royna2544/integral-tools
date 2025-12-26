@@ -1,0 +1,29 @@
+# Build directories
+build/
+cmake-build-*/
+
+# IDE directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Compiled Object files
+*.o
+*.obj
+
+# Compiled Libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+intools
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
